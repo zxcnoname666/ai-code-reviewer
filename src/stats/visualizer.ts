@@ -396,27 +396,27 @@ export function generateSummaryBadge(stats: ReviewStatistics): string {
 
   const table = new Table({
     chars: {
-      'top': '━', 'top-mid': '━', 'top-left': '┏', 'top-right': '┓',
-      'bottom': '━', 'bottom-mid': '━', 'bottom-left': '┗', 'bottom-right': '┛',
-      'left': '┃', 'left-mid': '┃', 'mid': '━', 'mid-mid': '━',
-      'right': '┃', 'right-mid': '┃', 'middle': '┃'
+      'top': '━', 'top-mid': '', 'top-left': '┏', 'top-right': '┓',
+      'bottom': '━', 'bottom-mid': '', 'bottom-left': '┗', 'bottom-right': '┛',
+      'left': '┃', 'left-mid': '', 'mid': '', 'mid-mid': '',
+      'right': '┃', 'right-mid': '', 'middle': ''
     },
-    style: { 'padding-left': 0, 'padding-right': 0 },
-    colWidths: [53]
+    style: { 'padding-left': 1, 'padding-right': 1 },
+    colWidths: [55]
   });
 
   table.push(
     [''],
-    [`  ${statusIcon}  ${status}`],
+    [`${statusIcon} ${status}`],
     [''],
-    [`  📊 Quality Score: ${scoreBar}`],
+    [`📊 Quality Score: ${scoreBar}`],
     [''],
-    ['  Issues Found:'],
-    [`    • Critical: ${String(stats.criticalIssues).padStart(3)} 🔴`],
-    [`    • Warnings:  ${String(stats.warningIssues).padStart(3)} ⚠️`],
-    [`    • Info:      ${String(stats.infoIssues).padStart(3)} 📘`],
+    ['Issues Found:'],
+    [`  • Critical: ${String(stats.criticalIssues).padStart(3)} 🔴`],
+    [`  • Warnings: ${String(stats.warningIssues).padStart(3)} ⚠️`],
+    [`  • Info:     ${String(stats.infoIssues).padStart(3)} 📘`],
     [''],
-    [`  Files: ${stats.filesWithIssues}/${stats.totalFiles} affected`],
+    [`Files: ${stats.filesWithIssues}/${stats.totalFiles} affected`],
     ['']
   );
 
