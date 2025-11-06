@@ -533,4 +533,16 @@ If you find AI Code Review useful, please:
 
 [⬆ Back to top](#-ai-code-review---github-action-with-deep-static-analysis)
 
+---
+
+<img src="https://count.getloli.com/get/@AI-Code-Review">
+
+ <a href="https://github.com/zxcnoname666/AI-Code-Review">
+  <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=zxcnoname666/AI-Code-Review&type=date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=zxcnoname666/AI-Code-Review&type=date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=zxcnoname666/AI-Code-Review&type=date" />
+  </picture>
+ </a>
+</p>
 </div>
