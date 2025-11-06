@@ -383,10 +383,16 @@ async function analyzeFileAST(path: string, context: ToolContext): Promise<strin
   const lines: string[] = [];
   lines.push(`## AST Analysis: ${path}\n`);
 
+  // Check if parsing failed
+  if (analysis.ast === null) {
+    lines.push(`⚠️ **Note**: Full AST parsing not available for this file.`);
+    lines.push(`Showing basic metrics only.\n`);
+  }
+
   lines.push(`### Metrics`);
   lines.push(`- Lines of code: ${analysis.metrics.linesOfCode}`);
   lines.push(`- Complexity: ${analysis.metrics.complexity}`);
-  lines.push(`- Maintainability: ${analysis.metrics.maintainabilityIndex}`);
+  lines.push(`- Maintainability: ${analysis.metrics.maintainabilityIndex || 'N/A'}`);
   lines.push(`- Functions: ${analysis.metrics.functionCount}`);
   lines.push(`- Classes: ${analysis.metrics.classCount}`);
   lines.push(`- Comment ratio: ${(analysis.metrics.commentRatio * 100).toFixed(1)}%\n`);
@@ -404,6 +410,11 @@ async function analyzeFileAST(path: string, context: ToolContext): Promise<strin
       }
     }
     lines.push('');
+  } else if (analysis.ast === null) {
+    lines.push(`\n### Functions`);
+    lines.push(`Could not extract function details - AST parsing failed for this file.`);
+    lines.push(`The file appears to be valid code based on basic metrics (${analysis.metrics.linesOfCode} lines).`);
+    lines.push(`**Recommendation**: Use read_file() or get_file_diff() to review the code manually.\n`);
   }
 
   if (analysis.dependencies.length > 0) {
