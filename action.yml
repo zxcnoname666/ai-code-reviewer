@@ -1,0 +1,78 @@
+name: 'AI Code Review - Advanced Analysis'
+description: '🤖 Advanced AI-powered code review with AST analysis, linters, dependency tracking, and beautiful statistics'
+author: 'zxcnoname666'
+
+branding:
+  icon: 'search'
+  color: 'purple'
+
+runs:
+  using: 'node20'
+  main: 'dist/out.js'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token for API access'
+    required: true
+
+  OPENAI_API_KEY:
+    description: 'OpenAI API key for AI-powered code review'
+    required: false
+
+  OPENAI_API_MODEL:
+    description: 'OpenAI model to use (gpt-5, gpt-5-turbo, gpt-4-turbo)'
+    required: false
+    default: 'gpt-5'
+
+  OPENAI_API_BASE_URL:
+    description: 'OpenAI API base URL (for custom endpoints or proxies)'
+    required: false
+    default: 'https://api.openai.com/v1'
+
+  REVIEW_LANGUAGE:
+    description: 'Language for review comments (en, ru, es, fr, de, etc.)'
+    required: false
+    default: 'en'
+
+  SILENT_MODE:
+    description: 'Post reviews as silent comments to reduce notifications'
+    required: false
+    default: 'false'
+
+  MAX_CHUNK_SIZE:
+    description: 'Maximum tokens per chunk for large PRs'
+    required: false
+    default: '6000'
+
+  ENABLE_LINTERS:
+    description: 'Run linters on changed files (ESLint, Pylint, etc.)'
+    required: false
+    default: 'true'
+
+  ENABLE_AST:
+    description: 'Enable AST (Abstract Syntax Tree) analysis for deep code understanding'
+    required: false
+    default: 'true'
+
+  ENABLE_DEPENDENCY_ANALYSIS:
+    description: 'Analyze function dependencies and call graphs'
+    required: false
+    default: 'true'
+
+  SEVERITY_THRESHOLD:
+    description: 'Minimum severity level to report (info, warning, error)'
+    required: false
+    default: 'warning'
+
+outputs:
+  review_status:
+    description: 'Review status: approved, needs-changes, or rejected'
+
+  issues_found:
+    description: 'Total number of issues found'
+
+  critical_issues:
+    description: 'Number of critical issues found'
+
+  review_url:
+    description: 'URL to the review comment'

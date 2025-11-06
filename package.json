@@ -1,0 +1,48 @@
+{
+  "name": "@zxcnoname666/ai-code-review",
+  "version": "3.0.0",
+  "description": "Advanced AI-powered code review tool for GitHub with deep code analysis, multi-language support, and beautiful statistics",
+  "main": "dist/out.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node --watch src/index.ts",
+    "type-check": "tsc --noEmit",
+    "test": "node --test src/**/*.test.ts",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "github-action",
+    "code-review",
+    "ai",
+    "ast",
+    "static-analysis",
+    "linter",
+    "typescript",
+    "automation"
+  ],
+  "author": "zxcnoname666",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^6.0.0",
+    "@babel/parser": "^7.23.6",
+    "@typescript-eslint/parser": "^6.19.0",
+    "acorn": "^8.11.3",
+    "acorn-walk": "^8.3.2",
+    "espree": "^10.0.1",
+    "glob": "^11.0.0",
+    "tiktoken": "^1.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/babel__core": "^7.20.5",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "esbuild": "^0.24.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
