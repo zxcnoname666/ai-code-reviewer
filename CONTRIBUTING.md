@@ -291,7 +291,7 @@ export async function processReview(options: Options): Promise<void> {
  * ```typescript
  * const review = await generateReview(
  *   changedFiles,
- *   { model: 'gpt-4o', temperature: 0.7 },
+ *   { model: 'gpt-5', temperature: 0.7 },
  *   availableTools
  * );
  * ```
