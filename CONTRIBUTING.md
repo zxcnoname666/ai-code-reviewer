@@ -1,6 +1,6 @@
-# Contributing to Release Helper
+# Contributing to AI Code Reviewer
 
-First off, thank you for considering contributing to Release Helper! 🎉 It's people like you that make this project better for everyone.
+First off, thank you for considering contributing to AI Code Reviewer! 🎉 It's people like you that make this project better for everyone.
 
 ## 🌟 Ways to Contribute
 
@@ -25,19 +25,19 @@ Before creating a bug report, please check if the issue has already been reporte
 - **Environment details**:
   - Node.js version
   - Operating system
-  - Release Helper version
+  - AI Code Reviewer version
   - Relevant configuration
 
 **Example:**
 ```markdown
-### Bug: AI changelog generation fails with custom model
+### Bug: AI code review fails with custom model
 
 **Description:**
 When using `gpt-5-high` model, the action fails with error "Invalid model".
 
 **Steps to reproduce:**
 1. Configure workflow with `OPENAI_API_MODEL: gpt-5-high`
-2. Push commit with `!release: patch`
+2. Create a pull request
 3. Action fails
 
 **Expected:** Should use gpt-5-high model
@@ -46,7 +46,7 @@ When using `gpt-5-high` model, the action fails with error "Invalid model".
 **Environment:**
 - Node.js: 20.10.0
 - OS: Ubuntu 22.04
-- Release Helper: v1.0.0
+- AI Code Reviewer: v3.0.0
 ```
 
 ## 💡 Suggesting Features
@@ -341,7 +341,7 @@ Contributors are recognized in:
 
 Have questions about contributing?
 
-- Open a [Discussion](https://github.com/zxcnoname666/release-helper/discussions)
+- Open a [Discussion](https://github.com/zxcnoname666/AI-Code-Reviewer/discussions)
 - Comment on existing issues
 - Reach out to maintainers
 
@@ -353,6 +353,6 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ## 🙏 Thank You!
 
-Every contribution, no matter how small, makes a difference. Thank you for helping make Release Helper better! 🚀
+Every contribution, no matter how small, makes a difference. Thank you for helping make AI Code Reviewer better! 🚀
 
 **Happy Coding!** 💻✨

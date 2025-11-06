@@ -6,7 +6,7 @@
 
 **AI-Powered Code Review | Deep Static Analysis | Beautiful Statistics**
 
-[![GitHub Release](https://img.shields.io/github/v/release/zxcnoname666/Release-Helper?style=flat-square&logo=github)](https://github.com/zxcnoname666/Release-Helper/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/zxcnoname666/AI-Code-Reviewer?style=flat-square&logo=github)](https://github.com/zxcnoname666/AI-Code-Reviewer/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square)](https://nodejs.org)
@@ -107,7 +107,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: AI Code Review
-        uses: zxcnoname666/Release-Helper@v3
+        uses: zxcnoname666/AI-Code-Reviewer@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -117,7 +117,7 @@ jobs:
 
 ```yaml
 - name: AI Code Review
-  uses: zxcnoname666/Release-Helper@v3
+  uses: zxcnoname666/AI-Code-Reviewer@v3
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -286,7 +286,7 @@ registerCustomLinter('golangci-lint', {
 ### Custom OpenAI Endpoint (Azure)
 
 ```yaml
-- uses: zxcnoname666/Release-Helper@v3
+- uses: zxcnoname666/AI-Code-Reviewer@v3
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
@@ -297,7 +297,7 @@ registerCustomLinter('golangci-lint', {
 ### Multi-Language Teams
 
 ```yaml
-- uses: zxcnoname666/Release-Helper@v3
+- uses: zxcnoname666/AI-Code-Reviewer@v3
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -307,7 +307,7 @@ registerCustomLinter('golangci-lint', {
 ### High-Performance Setup
 
 ```yaml
-- uses: zxcnoname666/Release-Helper@v3
+- uses: zxcnoname666/AI-Code-Reviewer@v3
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -326,8 +326,8 @@ registerCustomLinter('golangci-lint', {
 
 ### Setup
 ```bash
-git clone https://github.com/zxcnoname666/Release-Helper.git
-cd Release-Helper
+git clone https://github.com/zxcnoname666/AI-Code-Reviewer.git
+cd AI-Code-Reviewer
 pnpm install
 pnpm build
 ```
@@ -383,9 +383,9 @@ MIT License - see [LICENSE](LICENSE)
 
 ## 📞 Support
 
-- 🐛 [Report Bug](https://github.com/zxcnoname666/Release-Helper/issues)
-- 💡 [Request Feature](https://github.com/zxcnoname666/Release-Helper/issues)
-- 📖 [Documentation](https://github.com/zxcnoname666/Release-Helper)
+- 🐛 [Report Bug](https://github.com/zxcnoname666/AI-Code-Reviewer/issues)
+- 💡 [Request Feature](https://github.com/zxcnoname666/AI-Code-Reviewer/issues)
+- 📖 [Documentation](https://github.com/zxcnoname666/AI-Code-Reviewer)
 
 ---
 
