@@ -544,5 +544,4 @@ If you find AI Code Review useful, please:
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=zxcnoname666/AI-Code-Review&type=date" />
   </picture>
  </a>
-</p>
 </div>
