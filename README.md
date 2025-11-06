@@ -138,12 +138,12 @@ jobs:
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-    OPENAI_API_MODEL: 'gpt-4o'       # Latest model
+    OPENAI_API_MODEL: 'gpt-5'        # Latest model
     REVIEW_LANGUAGE: 'ru'            # Review in Russian
     SILENT_MODE: 'true'              # Reduce notifications
     ENABLE_AST: 'true'               # Deep code analysis
     ENABLE_LINTERS: 'true'           # Run linters
-    MAX_CHUNK_SIZE: '8000'           # Larger chunks for o3
+    MAX_CHUNK_SIZE: '8000'           # Larger chunks
 ```
 
 ---
@@ -161,7 +161,7 @@ jobs:
 | Input | Description | Default |
 |-------|-------------|---------|
 | `OPENAI_API_KEY` | OpenAI API key (or compatible provider) | - |
-| `OPENAI_API_MODEL` | Model name (`gpt-4o`, `gpt-4-turbo`, `o3-mini`, etc.) | `gpt-4o` |
+| `OPENAI_API_MODEL` | Model name (`gpt-5`, `gpt-5-turbo`, `o3`, `o3-mini`, etc.) | `gpt-5` |
 | `OPENAI_API_BASE_URL` | Custom endpoint (Azure, AWS Bedrock, local) | `https://api.openai.com/v1` |
 | `REVIEW_LANGUAGE` | Review language (`en`, `ru`, `es`, `fr`, `de`, etc.) | `en` |
 | `SILENT_MODE` | Minimize email notifications | `false` |
@@ -347,7 +347,7 @@ const posts = await db.query(`
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
     OPENAI_API_BASE_URL: 'https://your-resource.openai.azure.com/v1'
-    OPENAI_API_MODEL: 'gpt-4o'
+    OPENAI_API_MODEL: 'gpt-5'
 ```
 
 ### Use with O3 Reasoning Model

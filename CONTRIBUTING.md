@@ -38,7 +38,7 @@ When using Azure OpenAI endpoint, the action fails with error "Invalid API endpo
 
 **Steps to reproduce:**
 1. Configure workflow with Azure OpenAI endpoint
-2. Set `OPENAI_API_MODEL: gpt-4o`
+2. Set `OPENAI_API_MODEL: gpt-5`
 3. Create a pull request
 4. Action fails with authentication error
 
@@ -49,7 +49,7 @@ When using Azure OpenAI endpoint, the action fails with error "Invalid API endpo
 - Node.js: 20.10.0
 - OS: Ubuntu 22.04
 - AI Code Reviewer: v1.0.0
-- Model: gpt-4o (Azure)
+- Model: gpt-5 (Azure)
 ```
 
 ## 💡 Suggesting Features
