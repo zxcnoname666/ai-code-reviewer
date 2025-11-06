@@ -174,28 +174,21 @@ async function callOpenAI(
   }));
 
   try {
-    const requestBody: any = {
-      model: config.model,
-      messages,
-      temperature: 0.3, // Lower temperature for more focused, consistent reviews
-      max_tokens: MAX_TOKENS,
-      top_p: 0.95,
-    };
-
-    // Add tools if model supports them (most modern models do)
-    // Only skip tools for very old models or specific edge cases
-    if (config.model && !config.model.includes('gpt-3.5-turbo-0301')) {
-      requestBody.tools = tools;
-      requestBody.tool_choice = 'auto'; // Let model decide when to use tools
-    }
-
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${config.apiKey}`,
       },
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify({
+        model: config.model,
+        messages,
+        temperature: 0.3, // Lower temperature for more focused, consistent reviews
+        max_tokens: MAX_TOKENS,
+        top_p: 0.95,
+        tools,
+        tool_choice: 'auto', // Let model decide when to use tools
+      }),
     });
 
     if (!response.ok) {
