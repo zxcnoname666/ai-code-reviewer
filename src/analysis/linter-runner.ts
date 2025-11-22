@@ -14,6 +14,21 @@ import { join } from 'node:path';
 let dependenciesInstalled = false;
 
 /**
+ * Check if a command is available in the system PATH
+ */
+async function isCommandAvailable(command: string): Promise<boolean> {
+  try {
+    await exec('which', [command], {
+      ignoreReturnCode: true,
+      silent: true,
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Custom linter configuration
  */
 export interface CustomLinterConfig {
@@ -161,10 +176,26 @@ async function ensureDependenciesInstalled(workdir: string): Promise<void> {
     let args: string[] = ['install'];
 
     if (hasPnpmLock) {
-      command = 'pnpm';
+      // Check if pnpm is available, otherwise use npx
+      const hasPnpm = await isCommandAvailable('pnpm');
+      if (hasPnpm) {
+        command = 'pnpm';
+      } else {
+        console.log('pnpm not found, using npx pnpm');
+        command = 'npx';
+        args = ['--yes', 'pnpm', 'install'];
+      }
     } else if (hasYarnLock) {
-      command = 'yarn';
-      args = []; // yarn install doesn't need 'install' arg
+      // Check if yarn is available, otherwise use npx
+      const hasYarn = await isCommandAvailable('yarn');
+      if (hasYarn) {
+        command = 'yarn';
+        args = []; // yarn install doesn't need 'install' arg
+      } else {
+        console.log('yarn not found, using npx yarn');
+        command = 'npx';
+        args = ['--yes', 'yarn', 'install'];
+      }
     } else if (hasPackageLock) {
       command = 'npm';
       args = ['ci']; // npm ci is faster and more reliable for CI
@@ -275,7 +306,7 @@ async function lintJavaScript(filename: string, workdir: string): Promise<LintRe
 
     console.log(`Running linter: ${useLocalEslint ? 'local ESLint' : 'npx eslint'}`);
 
-    const exitCode = await exec(command, args, {
+    await exec(command, args, {
       cwd: workdir,
       ignoreReturnCode: true,
       listeners: {
